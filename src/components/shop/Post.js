@@ -4,11 +4,17 @@ import FoodContext from "../context/foodContext";
 import PropTypes from "prop-types";
 
 function Post({ food }) {
-	const foodContext = useContext(FoodContext);
+	//const foodContext = useContext(FoodContext);
 
-	const { name } = food;
+	const { name, review, image } = food;
 
-	return <div>{name}</div>;
+	return (
+		<div>
+			<h4>{name}</h4>
+			<p>{review}</p>
+			<img src={image} alt="food pic" width="100" height="50" />
+		</div>
+	);
 }
 
 Post.propTypes = {
