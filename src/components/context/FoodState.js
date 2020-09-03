@@ -1,6 +1,5 @@
 import React, { useReducer } from "react";
 import FoodContext from "./foodContext";
-
 import foodReducer from "./foodReducer";
 
 const FoodState = props => {
@@ -31,11 +30,12 @@ const FoodState = props => {
 
 	const [state, dispatch] = useReducer(foodReducer, initialState);
 
+	//export const foodContext = createContext();
+
 	return (
 		<FoodContext.Provider
 			value={{
-				food: state.food,
-				state
+				food: state.food
 			}}
 		>
 			{props.children}

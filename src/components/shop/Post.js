@@ -1,13 +1,18 @@
 import React from "react";
 import { useContext } from "react";
 import FoodContext from "../context/foodContext";
+import PropTypes from "prop-types";
 
-function Post() {
+function Post({ food }) {
 	const foodContext = useContext(FoodContext);
 
-	const { food } = foodContext;
+	const { name } = food;
 
-	return <div>{food}</div>;
+	return <div>{name}</div>;
 }
+
+Post.propTypes = {
+	food: PropTypes.object.isRequired
+};
 
 export default Post;

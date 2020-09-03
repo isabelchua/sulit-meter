@@ -2,12 +2,15 @@ import React from "react";
 
 import "./App.css";
 import Shop from "./components/shop/Shop";
+import FoodState from "./components/context/FoodState";
 
 function App() {
 	return (
-		<div className="App">
-			<Shop />
-		</div>
+		<FoodState>
+			<div className="App">
+				<Shop />
+			</div>
+		</FoodState>
 	);
 }
 
