@@ -93,3 +93,30 @@ body {
 		justify-content: flex-end;
 	}
 }
+
+.button-icon {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.button-icon:hover {
+	background-color: #e8f5fe;
+	border-radius: 30px;
+	color: $primary-color;
+	transition: color 0.1s ease-out;
+}
+
+.button-icon > .MuiSvgIcon-root {
+	padding: 18px;
+}
+
+.button-icon > h3 {
+	font-weight: 700;
+	font-size: 18px;
+	margin-right: 20px;
+}
+
+.sidebarOption--active {
+	color: $secondary-color;
+}
