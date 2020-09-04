@@ -11,7 +11,8 @@ const FoodState = props => {
 				shop: 5,
 				image: "https://i.imgur.com/w6igL9E.jpg",
 				review: "Soooo good!",
-				rating: 5
+				rating: 5,
+				userid: 1
 			},
 			{
 				id: 2,
@@ -19,7 +20,8 @@ const FoodState = props => {
 				shop: 3,
 				image: "",
 				review: "Soooo good!",
-				rating: 5
+				rating: 5,
+				userid: 1
 			},
 			{
 				id: 3,
@@ -27,7 +29,8 @@ const FoodState = props => {
 				shop: 1,
 				image: "",
 				review: "Soooo good!",
-				rating: 5
+				rating: 5,
+				userid: 1
 			},
 			{
 				id: 4,
@@ -35,7 +38,8 @@ const FoodState = props => {
 				shop: 4,
 				image: "https://i.imgur.com/5Tuw7mv.jpg",
 				review: "Soooo good!",
-				rating: 5
+				rating: 5,
+				userid: 1
 			},
 			{
 				id: 5,
@@ -43,7 +47,8 @@ const FoodState = props => {
 				shop: 1,
 				image: "https://i.imgur.com/pLPZ3vM.jpg",
 				review: "Soooo good!",
-				rating: 5
+				rating: 5,
+				userid: 1
 			},
 			{
 				id: 6,
@@ -51,7 +56,8 @@ const FoodState = props => {
 				shop: 1,
 				image: "https://i.imgur.com/fWn2enF.jpg",
 				review: "Soooo good!",
-				rating: 5
+				rating: 5,
+				userid: 1
 			}
 		],
 		current: null,

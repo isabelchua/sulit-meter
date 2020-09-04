@@ -9,7 +9,7 @@ function Post({ food }) {
 	const { name, review, image } = food;
 
 	return (
-		<div>
+		<div className="post">
 			<h4>{name}</h4>
 			<p>{review}</p>
 			<img src={image} alt="food pic" width="100" height="50" />
