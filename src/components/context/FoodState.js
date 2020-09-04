@@ -21,7 +21,8 @@ const FoodState = props => {
 				image: "",
 				review: "Soooo good!",
 				rating: 5,
-				userid: 1
+				userid: 2,
+				date: "Septemper 2 2020"
 			},
 			{
 				id: 3,
@@ -30,7 +31,7 @@ const FoodState = props => {
 				image: "",
 				review: "Soooo good!",
 				rating: 5,
-				userid: 1
+				userid: 3
 			},
 			{
 				id: 4,

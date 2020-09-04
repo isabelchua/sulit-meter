@@ -1,6 +1,7 @@
 import React from "react";
 import { useReducer } from "react";
 import ShopContext from "./shopContext";
+import shopReducer from "./shopReducer";
 
 const ShopState = props => {
 	const initialState = {
