@@ -8,11 +8,11 @@ function Home() {
 	const { shop } = shopContext;
 
 	return (
-		<div>
+		<>
 			{shop.map(sho => (
 				<ShopCard key={sho.id} shop={sho} />
 			))}
-		</div>
+		</>
 	);
 }
 

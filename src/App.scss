@@ -62,6 +62,19 @@ body {
 	border-radius: $curve;
 }
 
+.card {
+	background-color: #fff;
+	padding: 20px;
+	margin: 10px 0;
+	border-radius: $curve;
+
+	img {
+		height: 200px;
+		width: 300px;
+		border-radius: $curve;
+	}
+}
+
 .search {
 	border: none;
 	border-radius: 30px;

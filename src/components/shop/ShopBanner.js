@@ -1,9 +1,17 @@
 import React from "react";
 import ShopContext from "../context/shopContext";
 import PropTypes from "prop-types";
+import { useParams } from "react-router-dom";
 
 function ShopBanner({ shop }) {
 	const { name, image, description, phone, address, short } = shop;
+
+	//const { id, name } = useParams();
+
+	// console.log(id);
+	// console.log(shop);
+
+	// console.log(name);
 	return (
 		<div className="post">
 			<h4>{name}</h4>

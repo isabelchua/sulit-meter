@@ -7,6 +7,7 @@ import UserContext from "../context/userContext";
 import ReviewForm from "./ReviewForm";
 import SearchBar from "./SearchBar";
 import NavBar from "./NavBar";
+import { useParams } from "react-router-dom";
 
 function Shop() {
 	const foodContext = useContext(FoodContext);
@@ -16,15 +17,45 @@ function Shop() {
 	const { food } = foodContext;
 	const { shop } = shopContext;
 	const { user } = userContext;
-	console.log(user);
+	//console.log(user);
+
+	const { id, name } = useParams();
+	//.find(shop => shop.id === id)
+	console.log();
+	console.log(id + 1);
+	console.log(9);
+
+	// console.log(name);
+	// shop.find(shop => shop.id === id)
+	//.find(shop => shop.id === id)
+	//console.log(id);
+	//console.log(shop.map(sho => sho.id));
+	// console.log(shop.map(x => shop.find(obj => obj.id === id)));
+	let x = 9;
+	let y = id;
+	console.log(x);
+	console.log(shop.find(obj => obj.id === 9));
+	console.log(shop.find(obj => obj.id === Number(id)));
+	console.log(shop.find(obj => obj.id === y));
+
+	// shop.find(shop => shop.id === id));
 
 	return (
 		<div className="main-wrap">
 			<div className="col1">
 				<img src="../../img/logo.png" alt="logo" />
-				{shop.map(sho => (
-					<ShopBanner key={sho.id} shop={sho.id} />
-				))}
+				{/* .find(sho => sho.id ===  */}
+				{/* {shop.map(sho => ( */}
+				<ShopBanner shop={shop.find(obj => obj.id === Number(id))} />
+				{/* ))} */}
+				{/* <ShopBanner shop={shop.map(shop => shop)} /> */}
+				{/* {shop.map(sho => (
+					<ShopBanner
+						key={sho.id}
+						// id={id}
+						shop={shop.find(shop => shop.id === id)}
+					/>
+				))} */}
 			</div>
 			<div className="col2">
 				<div className="row">

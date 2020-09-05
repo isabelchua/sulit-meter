@@ -13,25 +13,27 @@ const ShopState = props => {
 				description:
 					"Located right at Limketkai, it is a best filipino restaurant. Portions are big and love how they serve rice wrapped in banana leaf and you use the banana leaf as your plate",
 				address: "Limketkai Drive 2/F, Limketkai Center, Lapasan",
-				image: "",
+				image: "https://i.imgur.com/5Tuw7mv.jpg",
 				short: "Asian Fusion"
 			},
 			{
-				id: 2,
+				id: 9,
 				name: "Bigbys",
 				phone: "245-345-909",
 				description:
 					"Located right at Limketkai, it is a best filipino restaurant. Portions are big and love how they serve rice wrapped in banana leaf and you use the banana leaf as your plate",
 				address: "Limketkai Drive 2/F, Limketkai Center, Lapasan",
+				image: "https://i.imgur.com/5Tuw7mv.jpg",
 				short: "Asian Fusion"
 			},
 			{
-				id: 3,
+				id: 6,
 				name: "Ramen Tei",
 				phone: "245-345-909",
 				description:
 					"Located right at Limketkai, it is a best filipino restaurant. Portions are big and love how they serve rice wrapped in banana leaf and you use the banana leaf as your plate",
 				address: "Limketkai Drive 2/F, Limketkai Center, Lapasan",
+				image: "https://i.imgur.com/5Tuw7mv.jpg",
 				short: "Asian Fusion"
 			}
 		],
