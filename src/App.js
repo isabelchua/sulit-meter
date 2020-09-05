@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.scss";
 import Shop from "./components/shop/Shop";
-import FoodState from "./components/context/FoodState";
+import PostState from "./components/context/PostState";
 import ShopState from "./components/context/ShopState";
 import UserState from "./components/context/UserState";
 import Home from "./components/shop/Home";
@@ -13,7 +13,7 @@ function App() {
 			<Switch>
 				<UserState>
 					<ShopState>
-						<FoodState>
+						<PostState>
 							<Route exact path="/">
 								<Home />
 							</Route>
@@ -21,7 +21,7 @@ function App() {
 								<Shop />
 							</Route>
 							{/* <Shop /> */}
-						</FoodState>
+						</PostState>
 					</ShopState>
 				</UserState>
 			</Switch>

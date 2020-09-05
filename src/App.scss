@@ -1,4 +1,5 @@
 @import "config";
+@import "buttons";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
 
 $curve: 15px;
@@ -55,6 +56,19 @@ body {
 	}
 }
 
+.shop-banner {
+	padding: 20px;
+	img {
+		height: 300px;
+		width: 300px;
+		border-radius: $curve;
+	}
+
+	.btn {
+		width: 100% !important;
+	}
+}
+
 .post {
 	background-color: #fff;
 	padding: 20px;
@@ -89,6 +103,7 @@ body {
 
 .review-form {
 	display: flex;
+	position: relative;
 	flex-basis: 100%;
 	background-color: #fff;
 	border-radius: $curve;
@@ -100,36 +115,18 @@ body {
 		border: none;
 	}
 
-	button {
-		display: flex;
-		align-items: flex-end;
-		justify-content: flex-end;
+	.btn {
+		// width: 100% !important;
+		position: absolute;
+		right: 0;
+		bottom: 0;
 	}
 }
 
 .button-icon {
+	border-radius: 30px;
 	display: flex;
 	align-items: center;
+	background-color: #6aa0c7;
 	cursor: pointer;
-}
-
-.button-icon:hover {
-	background-color: #e8f5fe;
-	border-radius: 30px;
-	color: $primary-color;
-	transition: color 0.1s ease-out;
-}
-
-.button-icon > .MuiSvgIcon-root {
-	padding: 18px;
-}
-
-.button-icon > h3 {
-	font-weight: 700;
-	font-size: 18px;
-	margin-right: 20px;
-}
-
-.sidebarOption--active {
-	color: $secondary-color;
 }

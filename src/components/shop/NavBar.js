@@ -1,7 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function NavBar() {
-	return <div>Shops | Login | Register</div>;
+	return (
+		<div>
+			<Link to="/">Shops</Link> | Login | Register
+		</div>
+	);
 }
 
 export default NavBar;

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import ShopBanner from "./ShopBanner";
 import Post from "./Post";
-import FoodContext from "../context/foodContext";
+import PostContext from "../context/postContext";
 import ShopContext from "../context/shopContext";
 import UserContext from "../context/userContext";
 import ReviewForm from "./ReviewForm";
@@ -10,11 +10,11 @@ import NavBar from "./NavBar";
 import { useParams } from "react-router-dom";
 
 function Shop() {
-	const foodContext = useContext(FoodContext);
+	const postContext = useContext(PostContext);
 	const shopContext = useContext(ShopContext);
 	const userContext = useContext(UserContext);
 
-	const { food } = foodContext;
+	const { post } = postContext;
 	const { shop } = shopContext;
 	const { user } = userContext;
 
@@ -33,7 +33,7 @@ function Shop() {
 
 	// foo.includes(Number(id))
 	// === Number(id)
-	console.log(food.shopid);
+	console.log(post.shopid);
 	return (
 		<div className="main-wrap">
 			<div className="col1">
@@ -50,23 +50,15 @@ function Shop() {
 
 				<p className="right">Sort by Highest Rated</p>
 
-				{food
+				{post
 					.filter(foo => foo.shopid === Number(id))
 					.map(foo => (
 						<Post
 							key={foo}
-							food={foo}
+							post={foo}
 							user={user.find(user => foo.userid === user.id)}
 						/>
 					))}
-
-				{/* {food.map(foo => (
-					<Post
-						key={food}
-						food={foo}
-						user={user.find(user => food.userid === user.id)}
-					/>
-				))} */}
 			</div>
 		</div>
 	);

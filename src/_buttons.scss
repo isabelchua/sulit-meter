@@ -4,7 +4,7 @@
 	margin: 3px;
 
 	&:hover {
-		transform: scale(.98);
+		transform: scale(0.98);
 	}
 }
 
@@ -16,4 +16,21 @@
 .btn-secondary {
 	@extend %btn;
 	background-color: $secondary-color;
+}
+
+.btn {
+	border-radius: 30px !important;
+	background-color: #dc6767 !important;
+	text-transform: capitalize !important;
+	padding: 8px 34px !important;
+	font-size: 16px !important;
+	margin: 10px 0 0 0 !important;
+}
+
+.btn-icon {
+	margin: 0 0 3px 1px !important;
+}
+
+.MuiIcon-root {
+	margin-left: 20px !important;
 }

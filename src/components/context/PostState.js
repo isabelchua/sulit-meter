@@ -1,10 +1,10 @@
 import React, { useReducer } from "react";
-import FoodContext from "./foodContext";
-import foodReducer from "./foodReducer";
+import PostContext from "./postContext";
+import postReducer from "./postReducer";
 
-const FoodState = props => {
+const PostState = props => {
 	const initialState = {
-		food: [
+		post: [
 			{
 				id: 1,
 				name: "Cake",
@@ -71,18 +71,18 @@ const FoodState = props => {
 		filtered: null
 	};
 
-	const [state, dispatch] = useReducer(foodReducer, initialState);
+	const [state, dispatch] = useReducer(postReducer, initialState);
 
 	//export const foodContext = createContext();
 
 	return (
-		<FoodContext.Provider
+		<PostContext.Provider
 			value={{
-				food: state.food
+				post: state.post
 			}}
 		>
 			{props.children}
-		</FoodContext.Provider>
+		</PostContext.Provider>
 	);
 };
-export default FoodState;
+export default PostState;

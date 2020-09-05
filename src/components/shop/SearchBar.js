@@ -1,6 +1,6 @@
 import React from "react";
-// import SearchIcon from "@material-ui/icons/Search";
-//import SearchIcon from "@material-ui/icons/Search";
+
+import SearchIcon from "@material-ui/icons/Search";
 
 function SearchBar() {
 	// const onChange = e => {
@@ -14,11 +14,11 @@ function SearchBar() {
 
 	return (
 		<form>
-			{/* <SearchIcon /> */}
+			<SearchIcon />
 			<input
 				type="text"
 				//ref={text}
-				placeholder="Filter Users..."
+				placeholder="Search"
 				//onChange={onChange}
 				name=""
 				id=""

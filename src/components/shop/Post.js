@@ -1,20 +1,22 @@
 import React from "react";
 import { useContext } from "react";
-import FoodContext from "../context/foodContext";
+import PostContext from "../context/postContext";
 import PropTypes from "prop-types";
 import { Avatar } from "@material-ui/core";
 
-function Post({ food, user }) {
+function Post({ post, user }) {
 	//const foodContext = useContext(FoodContext);
 
-	const { name, review, image } = food;
+	const { name, review, image } = post;
 	const { fname, lname, address } = user;
 
 	return (
 		<div className="post">
 			<Avatar src={user.image} />
 
-			<p>{fname + " " + lname}</p>
+			<p>
+				<strong>{fname + " " + lname}</strong>
+			</p>
 			<p>{address}</p>
 			<h4>{name}</h4>
 			<p>{review}</p>
@@ -24,7 +26,7 @@ function Post({ food, user }) {
 }
 
 Post.propTypes = {
-	food: PropTypes.object.isRequired
+	post: PropTypes.object.isRequired
 };
 
 export default Post;
