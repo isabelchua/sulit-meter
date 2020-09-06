@@ -2,8 +2,8 @@ import React from "react";
 
 function Footer() {
 	return (
-		<div>
-			<p>&copy FoodRatings 2020</p>
+		<div style={{ textAlign: "right" }}>
+			<p>&copy; FoodRatings 2020</p>
 		</div>
 	);
 }

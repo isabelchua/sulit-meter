@@ -20,7 +20,6 @@ function App() {
 							<Route path="/shop/:id/:name">
 								<Shop />
 							</Route>
-							{/* <Shop /> */}
 						</PostState>
 					</ShopState>
 				</UserState>

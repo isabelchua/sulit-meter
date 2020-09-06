@@ -8,8 +8,9 @@ import ReviewForm from "./ReviewForm";
 import SearchBar from "./SearchBar";
 import NavBar from "./NavBar";
 import { useParams } from "react-router-dom";
-import logo from "../../img/logo.png";
-import { Link } from "react-router-dom";
+import Footer from "./Footer";
+
+import Logo from "./Logo";
 
 function Shop() {
 	const postContext = useContext(PostContext);
@@ -39,9 +40,7 @@ function Shop() {
 	return (
 		<div className="main-wrap">
 			<div className="col1">
-				<Link to="/">
-					<img src={logo} alt="logo" />
-				</Link>
+				<Logo />
 
 				<ShopBanner shop={shop.find(obj => obj.id === Number(id))} />
 			</div>
@@ -64,6 +63,7 @@ function Shop() {
 							user={user.find(user => foo.userid === user.id)}
 						/>
 					))}
+				<Footer />
 			</div>
 		</div>
 	);

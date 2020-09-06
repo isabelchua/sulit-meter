@@ -19,7 +19,7 @@ export default class StarRating extends Component {
 	render() {
 		const { rating } = this.state;
 		return (
-			<div>
+			<div className="star-rating">
 				<StarRatingComponent
 					emptyStarColor="#AAA"
 					name="rate"

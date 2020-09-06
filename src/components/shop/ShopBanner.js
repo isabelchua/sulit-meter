@@ -1,8 +1,4 @@
 import React from "react";
-import ShopContext from "../context/shopContext";
-import PropTypes from "prop-types";
-import { useParams } from "react-router-dom";
-import ButtonIcon from "./ButtonIcon";
 import ShareIcon from "@material-ui/icons/Share";
 import { Button } from "@material-ui/core";
 import RoomIcon from "@material-ui/icons/Room";

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import ShopContext from "../context/shopContext";
 import ShopCard from "./ShopCard";
+import Logo from "./Logo";
 
 function Home() {
 	const shopContext = useContext(ShopContext);
@@ -8,11 +9,16 @@ function Home() {
 	const { shop } = shopContext;
 
 	return (
-		<>
-			{shop.map(sho => (
-				<ShopCard key={sho.id} shop={sho} />
-			))}
-		</>
+		<div className="home-wrap">
+			<div className="logo-home">
+				<Logo />
+			</div>
+			<div className="home-card">
+				{shop.map(sho => (
+					<ShopCard key={sho.id} shop={sho} />
+				))}
+			</div>
+		</div>
 	);
 }
 

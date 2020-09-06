@@ -21,16 +21,17 @@ function ReviewForm() {
 		<div className="review-form">
 			<form>
 				<Avatar src="https://imgur.com/LmpYcOR.jpg" />
-				<input placeholder="Write a Review"></input>
+				<div className="col">
+					<StarRating />
 
+					<input placeholder="Write a Review"></input>
+				</div>
 				{/* <StarRatingComponent
 					name="rate1"
 					starCount={5}
 					value={rating}
 					onStarClick={handleClick}
 				/> */}
-
-				<StarRating />
 
 				<Button
 					variant="contained"

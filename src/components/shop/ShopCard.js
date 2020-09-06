@@ -7,9 +7,9 @@ function ShopCard({ shop }) {
 
 	return (
 		// <Router>
-		<Link to={`shop/${id}/${name}`}>
+		<Link to={`shop/${id}/${name}`} className="shop-card">
 			<div className="card">
-				<p>{name}</p>
+				<h3>{name}</h3>
 				<img src={image} alt={name + " image"} />
 				<p>{address}</p>
 				<p>4 reviews</p>
