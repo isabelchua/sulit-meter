@@ -18,32 +18,36 @@ function ShopBanner({ shop }) {
 	// console.log(name);
 	return (
 		<div className="shop-banner">
-			<h2>{name}</h2>
-			<h4>{short}</h4>
-			<img src={image} alt="food pic" width="200" height="200" />
-			<p>{phone}</p>
-			<p>{address}</p>
-			<p>{description}</p>
-			{/* {stars total} */}
-			{/* {review - length} */}
-			<Button
-				variant="contained"
-				color="primary"
-				className="btn"
-				endIcon={<ShareIcon className="btn-icon" />}
-			>
-				{" "}
-				Get Directions
-			</Button>
-			<Button
-				variant="contained"
-				color="primary"
-				className="btn"
-				endIcon={<RoomIcon className="btn-icon" />}
-			>
-				{" "}
-				Share
-			</Button>
+			<div className="shop-details">
+				<h2>{name}</h2>
+				<h4>{short}</h4>
+				<img src={image} alt="food pic" width="200" height="200" />
+				<p>{phone}</p>
+				<p>{address}</p>
+				<p>{description}</p>
+				{/* {stars total} */}
+				{/* {review - length} */}
+			</div>
+			<div className="shop-button">
+				<Button
+					variant="contained"
+					color="primary"
+					className="btn"
+					endIcon={<RoomIcon className="btn-icon" />}
+				>
+					{" "}
+					Get Directions
+				</Button>
+				<Button
+					variant="contained"
+					color="primary"
+					className="btn bg-color-sub"
+					endIcon={<ShareIcon className="btn-icon" />}
+				>
+					{" "}
+					Share
+				</Button>
+			</div>
 		</div>
 	);
 }

@@ -2,9 +2,6 @@
 @import "buttons";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
 
-$curve: 15px;
-$gap: 10px;
-
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -23,26 +20,116 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	color: $gray;
+	line-height: 160%;
+}
+
+p {
+	margin: 7px 0 0 0;
+	line-height: 140%;
+}
+
+a {
+	text-decoration: none;
+	color: $main-color;
+}
+
+a:hover {
+	color: $sub-color;
 }
 
 .main-wrap {
-	max-width: 1100px;
+	width: 900px;
 	display: flex;
 	// align-items: center;
 	// justify-content: center;
 
 	.col1 {
 		background-color: white;
-		height: 100vh;
+		// height: 100vh;
 		width: 350px;
 		flex-direction: column;
 		margin-right: 40px;
+		padding: 20px 40px 40px 40px;
+
+		img {
+			margin: 10px 0;
+		}
 	}
 
 	.col2 {
 		display: flex;
 		flex-grow: 1;
 		flex-direction: column;
+		padding: 10px 0 0 0;
+
+		.search-form {
+			margin: 0;
+			display: flex;
+			flex: 1;
+
+			.search {
+				display: flex;
+				flex: 1;
+				border: none;
+				padding: 10px 10px 10px 10px;
+				border-radius: 30px;
+			}
+
+			input:focus {
+				outline: none;
+			}
+
+			.search-icon {
+				margin: 0 0 2px -35px !important;
+				padding: 5px;
+			}
+		}
+
+		.nav-bar {
+			display: flex;
+			align-items: center;
+			margin-left: 40px;
+
+			a {
+				margin: 0 10px;
+			}
+		}
+
+		.sort {
+			margin: 15px 0 10px 0 !important;
+		}
+
+		.post {
+			background-color: #fff;
+			padding: 30px;
+			margin: 10px 0;
+			border-radius: $curve;
+
+			.user-profile-post {
+				display: flex;
+				align-items: center;
+			}
+
+			.user-details-post {
+				display: flex;
+				flex-direction: column;
+
+				margin-left: 20px;
+				p {
+					margin: 0;
+					line-height: 110%;
+				}
+			}
+
+			.post-content {
+				margin: 10px 0;
+				p {
+					margin: 25px 0;
+					line-height: 160%;
+				}
+			}
+		}
 	}
 
 	.right {
@@ -57,23 +144,41 @@ body {
 }
 
 .shop-banner {
-	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	width: auto;
+	margin-top: 10px;
 	img {
-		height: 300px;
-		width: 300px;
+		height: 220px;
+		width: 250px;
 		border-radius: $curve;
 	}
 
 	.btn {
 		width: 100% !important;
 	}
-}
+	.shop-details {
+		//margin-top: auto;
+		display: flex;
+		flex-direction: column;
+		//flex-grow: 1;
+		flex-basis: 100%;
+		width: auto;
+	}
 
-.post {
-	background-color: #fff;
-	padding: 20px;
-	margin: 10px 0;
-	border-radius: $curve;
+	.shop-button {
+		// position: relative;
+		// display: flex;
+		// flex-direction: column;
+		// align-self: flex-end;
+		// align-items: flex-end;
+		display: block;
+		position: absolute;
+		bottom: 20px;
+		width: auto;
+		padding: 8px 0px !important;
+	}
 }
 
 .card {
@@ -89,15 +194,9 @@ body {
 	}
 }
 
-.search {
-	border: none;
-	border-radius: 30px;
-	padding: 10px;
-	margin: $gap 0;
-}
-
 .row {
 	display: flex;
+	flex: 1;
 	margin: $gap 0;
 }
 
@@ -107,19 +206,23 @@ body {
 	flex-basis: 100%;
 	background-color: #fff;
 	border-radius: $curve;
-	width: 100%;
 	padding: 20px;
 
 	input {
 		display: flex;
 		border: none;
+		height: 100px;
+	}
+
+	input:focus {
+		outline: none;
 	}
 
 	.btn {
 		// width: 100% !important;
 		position: absolute;
-		right: 0;
-		bottom: 0;
+		right: 15px;
+		bottom: 15px;
 	}
 }
 
@@ -129,4 +232,13 @@ body {
 	align-items: center;
 	background-color: #6aa0c7;
 	cursor: pointer;
+}
+
+.bg-color-sub {
+	background-color: $sub-color !important;
+}
+
+.MuiAvatar-root {
+	width: 50px !important;
+	height: 50px !important;
 }

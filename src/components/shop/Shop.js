@@ -8,6 +8,8 @@ import ReviewForm from "./ReviewForm";
 import SearchBar from "./SearchBar";
 import NavBar from "./NavBar";
 import { useParams } from "react-router-dom";
+import logo from "../../img/logo.png";
+import { Link } from "react-router-dom";
 
 function Shop() {
 	const postContext = useContext(PostContext);
@@ -33,11 +35,13 @@ function Shop() {
 
 	// foo.includes(Number(id))
 	// === Number(id)
-	console.log(post.shopid);
+	//console.log(post.shopid);
 	return (
 		<div className="main-wrap">
 			<div className="col1">
-				<img src="../../img/logo.png" alt="logo" />
+				<Link to="/">
+					<img src={logo} alt="logo" />
+				</Link>
 
 				<ShopBanner shop={shop.find(obj => obj.id === Number(id))} />
 			</div>
@@ -48,8 +52,9 @@ function Shop() {
 				</div>
 				<ReviewForm />
 
-				<p className="right">Sort by Highest Rated</p>
-
+				<div className="sort">
+					<p className="right">Sort by Highest Rated</p>
+				</div>
 				{post
 					.filter(foo => foo.shopid === Number(id))
 					.map(foo => (

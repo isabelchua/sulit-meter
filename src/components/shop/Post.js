@@ -12,15 +12,20 @@ function Post({ post, user }) {
 
 	return (
 		<div className="post">
-			<Avatar src={user.image} />
-
-			<p>
-				<strong>{fname + " " + lname}</strong>
-			</p>
-			<p>{address}</p>
-			<h4>{name}</h4>
-			<p>{review}</p>
-			<img src={image} alt="food pic" className="img" />
+			<div className="user-profile-post">
+				<Avatar src={user.image} />
+				<div className="user-details-post">
+					<p>
+						<strong>{fname + " " + lname}</strong>
+					</p>
+					<p>{address}</p>
+				</div>
+			</div>
+			<div className="post-content">
+				{/* <h4>{name}</h4> */}
+				<p>{review}</p>
+				<img src={image} alt="food pic" className="img" />
+			</div>
 		</div>
 	);
 }

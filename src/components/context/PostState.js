@@ -10,7 +10,8 @@ const PostState = props => {
 				name: "Cake",
 				shop: 5,
 				image: "https://i.imgur.com/w6igL9E.jpg",
-				review: "Soooo good!",
+				review:
+					"Excellent! Staff are very friendly! Definitely will come back! Very family style! Original presentation! The pakbet was served in a hallowed squash! Nice!!",
 				rating: 5,
 				userid: 1,
 				shopid: 1

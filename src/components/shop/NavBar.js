@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
 	return (
-		<div>
-			<Link to="/">Shops</Link> | Login | Register
+		<div className="nav-bar">
+			<Link to="/">Shops </Link> | <Link to="/login">Login</Link> |{" "}
+			<Link to="/">Register</Link>
 		</div>
 	);
 }

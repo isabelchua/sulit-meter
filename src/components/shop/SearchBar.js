@@ -1,6 +1,7 @@
 import React from "react";
-
 import SearchIcon from "@material-ui/icons/Search";
+import IconButton from "@material-ui/core/IconButton";
+import Button from "@material-ui/core/Button";
 
 function SearchBar() {
 	// const onChange = e => {
@@ -13,8 +14,7 @@ function SearchBar() {
 	// };
 
 	return (
-		<form>
-			<SearchIcon />
+		<form className="search-form">
 			<input
 				type="text"
 				//ref={text}
@@ -24,6 +24,9 @@ function SearchBar() {
 				id=""
 				className="search"
 			/>
+			<IconButton aria-label="search" className="search-icon">
+				<SearchIcon />
+			</IconButton>
 		</form>
 	);
 }
