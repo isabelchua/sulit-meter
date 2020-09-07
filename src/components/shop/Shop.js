@@ -17,7 +17,7 @@ function Shop() {
 	const shopContext = useContext(ShopContext);
 	const userContext = useContext(UserContext);
 
-	const { post } = postContext;
+	const { posts } = postContext;
 	const { shop } = shopContext;
 	const { user } = userContext;
 
@@ -42,7 +42,7 @@ function Shop() {
 			<div className="col1">
 				<Logo />
 
-				<ShopBanner shop={shop.find(obj => obj.id === Number(id))} />
+				<ShopBanner shop={shop.find(obj => obj.id === id)} />
 			</div>
 			<div className="col2">
 				<div className="row">
@@ -54,12 +54,12 @@ function Shop() {
 				<div className="sort">
 					<p className="right">Sort by Highest Rated</p>
 				</div>
-				{post
-					.filter(foo => foo.shopid === Number(id))
+				{posts
+					.filter(foo => foo.shopid === id)
 					.map(foo => (
 						<Post
-							key={foo}
-							post={foo}
+							key={foo.id}
+							posts={foo}
 							user={user.find(user => foo.userid === user.id)}
 						/>
 					))}

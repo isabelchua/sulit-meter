@@ -7,7 +7,7 @@ const ShopState = props => {
 	const initialState = {
 		shop: [
 			{
-				id: 1,
+				id: "1",
 				name: "Kagayanon",
 				phone: "245-345-909",
 				description:
@@ -17,7 +17,7 @@ const ShopState = props => {
 				short: "Asian Fusion"
 			},
 			{
-				id: 9,
+				id: "9",
 				name: "Bigbys",
 				phone: "245-345-909",
 				description:
@@ -27,7 +27,7 @@ const ShopState = props => {
 				short: "Asian Fusion"
 			},
 			{
-				id: 6,
+				id: "6",
 				name: "Ramen Tei",
 				phone: "245-345-909",
 				description:
@@ -37,7 +37,7 @@ const ShopState = props => {
 				short: "Asian Fusion"
 			},
 			{
-				id: 2,
+				id: "2",
 				name: "Red Tail",
 				phone: "245-345-909",
 				description:
@@ -47,7 +47,7 @@ const ShopState = props => {
 				short: "Asian Fusion"
 			},
 			{
-				id: 3,
+				id: "3",
 				name: "Missy Bon-bon",
 				phone: "245-345-909",
 				description:

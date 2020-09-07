@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
 	return (
-		<div style={{ textAlign: "right" }}>
+		<div className="footer">
 			<p>&copy; FoodRatings 2020</p>
 		</div>
 	);

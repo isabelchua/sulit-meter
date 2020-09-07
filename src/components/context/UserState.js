@@ -7,7 +7,7 @@ const ShopState = props => {
 	const initialState = {
 		user: [
 			{
-				id: 1,
+				id: "1",
 				fname: "Mac",
 				lname: " Yu",
 				email: "mac@gmail.com",
@@ -18,7 +18,7 @@ const ShopState = props => {
 				image: "https://i.imgur.com/IVIuAu4.jpg"
 			},
 			{
-				id: 2,
+				id: "2",
 				fname: "Louie",
 				lname: "Abecia",
 				email: "louie@gmail.com",
@@ -29,7 +29,7 @@ const ShopState = props => {
 				image: "https://i.imgur.com/hU71hvX.jpg"
 			},
 			{
-				id: 3,
+				id: "3",
 				fname: "Isabel",
 				lname: "Chua",
 				email: "isabelchua86@gmail.com",

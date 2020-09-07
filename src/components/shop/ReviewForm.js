@@ -1,39 +1,73 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Button from "@material-ui/core/Button";
 import { Avatar } from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
 
-import { useState } from "react";
 import StarRating from "./StarRating";
-
-// changeRating ( newRating, name ) {
-// 	this.setState({
-// 	  rating: newRating
-// 	});
-//  };
+import PostContext from "../context/postContext";
+import { useParams } from "react-router-dom";
 
 function ReviewForm() {
-	// const [rating, setRating] = useState(1);
+	const postContext = useContext(PostContext);
 
-	// const handleClick = r => setRating(r => r + rating);
+	const { addPost } = postContext;
+	const { id } = useParams();
+
+	const [post, setPost] = useState({
+		review: "",
+		rating: 0,
+		image: "",
+		type: "member",
+		shopid: id,
+		userid: "1"
+	});
+
+	const { review, rating, image } = post;
+
+	// useEffect(() => {
+	// 	if (current !== null) {
+	// 		setPost(current);
+	// 	} else {
+	// 		setPost({
+	// 			review: '',
+	// 			stars: 0,
+	// 			image: '',
+	// 			type: 'member'
+	// 		});
+	// 	}
+	// }, [postContext, stars]);
+
+	const onChange = e => setPost({ ...post, [e.target.name]: e.target.value });
+
+	const onSubmit = e => {
+		e.preventDefault();
+		//console.log(post);
+		addPost(post);
+	};
 
 	return (
 		<div className="review-form">
-			<form>
+			<form onSubmit={onSubmit}>
 				<Avatar src="https://imgur.com/LmpYcOR.jpg" />
 				<div className="col">
-					<StarRating />
+					<StarRating name="stars" value={rating} />
 
-					<input placeholder="Write a Review"></input>
+					<input
+						name="review"
+						value={review}
+						onChange={onChange}
+						placeholder="Write a Review"
+					></input>
+					<input
+						name="image"
+						value={image}
+						onChange={onChange}
+						placeholder="Add image url"
+					></input>
 				</div>
-				{/* <StarRatingComponent
-					name="rate1"
-					starCount={5}
-					value={rating}
-					onStarClick={handleClick}
-				/> */}
 
 				<Button
+					type="submit"
 					variant="contained"
 					color="primary"
 					className="btn"

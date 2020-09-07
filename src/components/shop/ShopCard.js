@@ -1,6 +1,5 @@
 import React from "react";
-import { Router, Link, Switch, Route } from "react-router-dom";
-import Shop from "./Shop";
+import { Link } from "react-router-dom";
 
 function ShopCard({ shop }) {
 	const { name, address, image, id } = shop;
