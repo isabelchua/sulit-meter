@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import ShopContext from "../context/shopContext";
 import ShopCard from "./ShopCard";
 import Logo from "./Logo";
+import NavBar from "./NavBar";
 
 function Home() {
 	const shopContext = useContext(ShopContext);
@@ -12,6 +13,7 @@ function Home() {
 		<div className="home-wrap">
 			<div className="logo-home">
 				<Logo />
+				<NavBar />
 			</div>
 			<div className="home-card">
 				{shop.map(sho => (

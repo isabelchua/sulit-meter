@@ -6,12 +6,14 @@ import SendIcon from "@material-ui/icons/Send";
 import StarRating from "./StarRating";
 import PostContext from "../context/postContext";
 import { useParams } from "react-router-dom";
+import Rating from "@material-ui/lab/Rating";
 
 function ReviewForm() {
 	const postContext = useContext(PostContext);
 
 	const { addPost } = postContext;
 	const { id } = useParams();
+	const [rating1, setRating] = useState(0);
 
 	const [post, setPost] = useState({
 		review: "",
@@ -50,7 +52,17 @@ function ReviewForm() {
 			<form onSubmit={onSubmit}>
 				<Avatar src="https://imgur.com/LmpYcOR.jpg" />
 				<div className="col">
-					<StarRating name="stars" value={rating} />
+					{/* <StarRating name="stars" value={rating} /> */}
+					{/* <Box component="fieldset" mb={1} borderColor="transparent"> */}
+					{/* <Typography component="legend">Controlled</Typography> */}
+					<Rating
+						name="rating"
+						value={rating1}
+						onChange={(event, newValue) => {
+							setRating(newValue);
+						}}
+					/>
+					{/* </Box> */}
 
 					<input
 						name="review"

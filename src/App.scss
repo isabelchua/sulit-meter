@@ -24,6 +24,16 @@ body {
 	line-height: 160%;
 }
 
+.logo {
+	display: flex;
+}
+
+.nav-bar {
+	display: flex;
+	align-items: center;
+	justify-content: right;
+}
+
 p {
 	margin: 7px 0 0 0;
 	line-height: 140%;
@@ -46,6 +56,8 @@ a:hover {
 
 	.logo-home {
 		width: 100%;
+		display: flex;
+		justify-content: space-between;
 	}
 
 	.home-card {
@@ -129,6 +141,8 @@ a:hover {
 			display: flex;
 			align-items: center;
 			margin-left: 40px;
+			justify-content: right;
+			// text-align: right;
 
 			a {
 				margin: 0 10px;
