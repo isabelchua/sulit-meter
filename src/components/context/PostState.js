@@ -17,7 +17,8 @@ const PostState = props => {
 					"Excellent! Staff are very friendly! Definitely will come back! Very family style! Original presentation! The pakbet was served in a hallowed squash! Nice!!",
 				rating: 5,
 				userid: "1",
-				shopid: "1"
+				shopid: "1",
+				date: ""
 			},
 			{
 				id: "2",
