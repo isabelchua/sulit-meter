@@ -32,6 +32,9 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: right;
+	a {
+		margin: 0 10px;
+	}
 }
 
 p {
@@ -64,6 +67,7 @@ a:hover {
 		display: flex;
 		width: 100%;
 		flex-wrap: wrap;
+		justify-content: space-between;
 	}
 
 	.shop-card {
@@ -143,10 +147,6 @@ a:hover {
 			margin-left: 40px;
 			justify-content: right;
 			// text-align: right;
-
-			a {
-				margin: 0 10px;
-			}
 		}
 
 		.sort {

@@ -3,7 +3,7 @@ import Button from "@material-ui/core/Button";
 import { Avatar } from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
 
-import StarRating from "./StarRating";
+//import StarRating from "./StarRating";
 import PostContext from "../context/postContext";
 import { useParams } from "react-router-dom";
 import Rating from "@material-ui/lab/Rating";

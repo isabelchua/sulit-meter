@@ -54,6 +54,24 @@ function Register() {
 					variant="outlined"
 				/>
 				<TextField
+					name="email"
+					type="email"
+					inputRef={register({
+						required: "Email is required",
+						minLength: { value: 5, message: "Email is required" },
+						pattern: /^[A-Za-z]+$/i
+					})}
+					label="Email"
+					style={{ margin: 20 }}
+					helperText={errors.email && errors.email.message}
+					fullWidth
+					margin="normal"
+					InputLabelProps={{
+						shrink: true
+					}}
+					variant="outlined"
+				/>
+				<TextField
 					type="password"
 					placeholder="Password"
 					name="password"
