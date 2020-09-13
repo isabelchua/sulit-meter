@@ -3,7 +3,9 @@ import {
 	CLEAR_POST,
 	DELETE_POST,
 	SET_POST,
-	UPDATE_POST
+	UPDATE_POST,
+	SEARCH_POST,
+	CLEAR_SEARCH
 } from "../types";
 
 export default (state, action) => {
@@ -35,6 +37,19 @@ export default (state, action) => {
 			return {
 				...state,
 				current: null
+			};
+		case SEARCH_POST:
+			return {
+				...state,
+				filtered: state.posts.filter(post => {
+					const regex = new RegExp(`${action.payload}`, "gi");
+					return post.review.match(regex);
+				})
+			};
+		case CLEAR_SEARCH:
+			return {
+				...state,
+				filtered: null
 			};
 		default:
 			return state;

@@ -8,7 +8,9 @@ import {
 	DELETE_POST,
 	SET_POST,
 	CLEAR_POST,
-	UPDATE_POST
+	UPDATE_POST,
+	SEARCH_POST,
+	CLEAR_SEARCH
 } from "../types";
 
 const PostState = props => {
@@ -110,6 +112,16 @@ const PostState = props => {
 		dispatch({ type: UPDATE_POST, payload: post });
 	};
 
+	// SEARCH
+	const searchPost = text => {
+		dispatch({ type: SEARCH_POST, payload: text });
+	};
+
+	//CLEAR SEARCH
+	const clearSearch = () => {
+		dispatch({ type: CLEAR_SEARCH });
+	};
+
 	return (
 		<PostContext.Provider
 			value={{
@@ -119,7 +131,10 @@ const PostState = props => {
 				current: state.current,
 				setPost,
 				clearPost,
-				updatePost
+				updatePost,
+				filtered: state.filtered,
+				searchPost,
+				clearSearch
 			}}
 		>
 			{props.children}

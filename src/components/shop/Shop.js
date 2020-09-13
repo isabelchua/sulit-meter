@@ -17,7 +17,8 @@ function Shop() {
 	const shopContext = useContext(ShopContext);
 	const userContext = useContext(UserContext);
 
-	const { posts } = postContext;
+	const { posts, filtered } = postContext;
+
 	const { shop } = shopContext;
 	const { user } = userContext;
 
@@ -37,6 +38,10 @@ function Shop() {
 	// foo.includes(Number(id))
 	// === Number(id)
 	//console.log(post.shopid);
+
+	if (posts.length === 0) {
+		return <h4>No Reviews</h4>;
+	}
 	return (
 		<div className="main-wrap">
 			<div className="col1">
@@ -53,7 +58,27 @@ function Shop() {
 				<div className="sort">
 					<p className="right">Sort by Highest Rated</p>
 				</div>
-				{posts
+				{filtered !== null
+					? filtered
+							.filter(foo => foo.shopid === id)
+							.map(foo => (
+								<Post
+									key={foo.id}
+									posts={foo}
+									user={user.find(user => foo.userid === user.id)}
+								/>
+							))
+					: posts
+							.filter(foo => foo.shopid === id)
+							.map(foo => (
+								<Post
+									key={foo.id}
+									posts={foo}
+									user={user.find(user => foo.userid === user.id)}
+								/>
+							))}
+
+				{/* {posts
 					.filter(foo => foo.shopid === id)
 					.map(foo => (
 						<Post
@@ -61,7 +86,7 @@ function Shop() {
 							posts={foo}
 							user={user.find(user => foo.userid === user.id)}
 						/>
-					))}
+					))} */}
 				<Footer />
 			</div>
 		</div>
