@@ -1,4 +1,10 @@
-import { ADD_POST, CLEAR_POST, DELETE_POST, SET_POST } from "../types";
+import {
+	ADD_POST,
+	CLEAR_POST,
+	DELETE_POST,
+	SET_POST,
+	UPDATE_POST
+} from "../types";
 
 export default (state, action) => {
 	switch (action.type) {
@@ -7,6 +13,13 @@ export default (state, action) => {
 			return {
 				...state,
 				posts: [...state.posts, action.payload]
+			};
+		case UPDATE_POST:
+			return {
+				...state,
+				posts: state.posts.map(post =>
+					post.id === action.payload.id ? action.payload : post
+				)
 			};
 		case DELETE_POST:
 			return {

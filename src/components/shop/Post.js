@@ -4,12 +4,12 @@ import { Avatar } from "@material-ui/core";
 import Rating from "@material-ui/lab/Rating";
 import PostContext from "../context/postContext";
 
-function Post({ post, user }) {
+function Post({ posts, user }) {
 	//const foodContext = useContext(FoodContext);
 	const postContext = useContext(PostContext);
 	const { deletePost, setPost, clearPost } = postContext;
 
-	const { id, name, review, image, userid } = post;
+	const { id, name, review, image, userid } = posts;
 	const { fname, lname, address, rating } = user;
 
 	const onDelete = () => {
@@ -42,7 +42,7 @@ function Post({ post, user }) {
 				{userid}
 				{"  = "} {user.id}
 				{/* if logged in user id is === to post userid then show delete button */}
-				<button onClick={() => setPost(post)}>Edit</button>
+				<button onClick={() => setPost(posts)}>Edit</button>
 				<button onClick={onDelete}>delete</button>
 			</div>
 		</div>
@@ -50,7 +50,7 @@ function Post({ post, user }) {
 }
 
 Post.propTypes = {
-	post: PropTypes.object.isRequired
+	posts: PropTypes.object.isRequired
 };
 
 export default Post;

@@ -48,34 +48,34 @@ const PostState = props => {
 				shopid: "1"
 			},
 			{
-				id: 4,
+				id: "4",
 				name: "Humba",
 				shop: 4,
 				image: "https://i.imgur.com/5Tuw7mv.jpg",
 				review: "Soooo good!",
 				rating: 5,
-				userid: 1,
-				shopid: 6
+				userid: "1",
+				shopid: "6"
 			},
 			{
-				id: 5,
+				id: "5",
 				name: "Shrimps",
 				shop: 1,
 				image: "https://i.imgur.com/pLPZ3vM.jpg",
 				review: "Soooo good!",
 				rating: 5,
-				userid: 1,
-				shopid: 9
+				userid: "1",
+				shopid: "9"
 			},
 			{
-				id: 6,
+				id: "6",
 				name: "Triple chocolate cheesecake",
 				shop: 1,
 				image: "https://i.imgur.com/fWn2enF.jpg",
 				review: "Soooo good!",
 				rating: 5,
-				userid: 1,
-				shopid: 9
+				userid: "1",
+				shopid: "9"
 			}
 		],
 		current: null,

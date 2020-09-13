@@ -15,7 +15,7 @@ function ReviewForm() {
 	const [preview, setPreview] = useState("");
 	const postContext = useContext(PostContext);
 
-	const { addPost, current, clearPost } = postContext;
+	const { addPost, current, clearPost, updatePost } = postContext;
 
 	const { id } = useParams();
 	const [rating1, setRating] = useState(0);
@@ -24,7 +24,6 @@ function ReviewForm() {
 		review: "",
 		rating: 0,
 		image: "",
-		type: "member",
 		shopid: id,
 		userid: "1"
 	});
@@ -38,9 +37,13 @@ function ReviewForm() {
 			setPost({
 				review: "",
 				stars: 0,
-				image: ""
+				image: "",
+				shopid: id,
+				userid: "1"
 			});
 		}
+
+		//eslint-disable-next-line
 	}, [postContext, current]);
 
 	const handleFile = e => {
@@ -57,7 +60,7 @@ function ReviewForm() {
 	};
 
 	const uploadImage = async base64EncodedImage => {
-		console.log(base64EncodedImage);
+		//console.log(base64EncodedImage);
 		try {
 			await fetch("/api/upload", {
 				method: "POST",
@@ -76,11 +79,15 @@ function ReviewForm() {
 		if (current === null) {
 			addPost(post);
 		} else {
+			updatePost(post);
 		}
+		clearPost();
 		//console.log(post);
 		// if (!preview) return;
 		// uploadImage(preview);
 	};
+	console.log("shopid: ");
+	console.log(post.shopid);
 
 	const [isExpanded, setExpanded] = useState(false);
 
