@@ -9,8 +9,8 @@ function Post({ posts, user }) {
 	const postContext = useContext(PostContext);
 	const { deletePost, setPost, clearPost } = postContext;
 
-	const { id, name, review, image, userid } = posts;
-	const { fname, lname, address, rating } = user;
+	const { id, name, review, image, userid, rating } = posts;
+	const { fname, lname, address } = user;
 
 	const onDelete = () => {
 		deletePost(id);
@@ -35,7 +35,7 @@ function Post({ posts, user }) {
 				</div>
 			</div>
 			<div className="post-content">
-				<Rating name="read-only" value={rating} readOnly />
+				<Rating name="read-only" value={rating} readOnly precision={0.5} />
 				{/* <h4>{name}</h4> */}
 				<p>{review}</p>
 				<img src={image} alt="food pic" className="img" />

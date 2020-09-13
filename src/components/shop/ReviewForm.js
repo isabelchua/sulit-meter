@@ -3,7 +3,6 @@ import Button from "@material-ui/core/Button";
 import { Avatar } from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
 
-//import StarRating from "./StarRating";
 import PostContext from "../context/postContext";
 import { useParams } from "react-router-dom";
 import Rating from "@material-ui/lab/Rating";
@@ -18,7 +17,6 @@ function ReviewForm() {
 	const { addPost, current, clearPost, updatePost } = postContext;
 
 	const { id } = useParams();
-	const [rating1, setRating] = useState(0);
 
 	const [post, setPost] = useState({
 		review: "",
@@ -28,7 +26,7 @@ function ReviewForm() {
 		userid: "1"
 	});
 
-	const { review, rating, image } = post;
+	const { review, image, rating } = post;
 
 	useEffect(() => {
 		if (current !== null) {
@@ -36,7 +34,7 @@ function ReviewForm() {
 		} else {
 			setPost({
 				review: "",
-				stars: 0,
+				rating: 0,
 				image: "",
 				shopid: id,
 				userid: "1"
@@ -48,35 +46,42 @@ function ReviewForm() {
 
 	const handleFile = e => {
 		const file = e.target.files[0];
-		previewFile(file);
+		// previewFile(file);
 	};
 
-	const previewFile = file => {
-		const reader = new FileReader();
-		reader.readAsDataURL(file);
-		reader.onloadend = () => {
-			setPreview(reader.result);
-		};
-	};
+	// const previewFile = file => {
+	// 	const reader = new FileReader();
+	// 	reader.readAsDataURL(file);
+	// 	reader.onloadend = () => {
+	// 		setPreview(reader.result);
+	// 	};
+	// };
 
-	const uploadImage = async base64EncodedImage => {
-		//console.log(base64EncodedImage);
-		try {
-			await fetch("/api/upload", {
-				method: "POST",
-				body: JSON.stringify({ data: base64EncodedImage }),
-				headers: { "Content-type": "application/json" }
-			});
-		} catch (err) {
-			console.error(err);
-		}
-	};
+	// const uploadImage = async base64EncodedImage => {
+	// 	//console.log(base64EncodedImage);
+	// 	try {
+	// 		await fetch("/api/upload", {
+	// 			method: "POST",
+	// 			body: JSON.stringify({ data: base64EncodedImage }),
+	// 			headers: { "Content-type": "application/json" }
+	// 		});
+	// 	} catch (err) {
+	// 		console.error(err);
+	// 	}
+	// };
 
-	const onChange = e => setPost({ ...post, [e.target.name]: e.target.value });
+	const onChange = (e, rate) => {
+		//setPost({ ...post, [e.target.name]: e.target.value, rating: rate });
+		//setPost(prevPosts => ({ ...prevPosts, rating: rate }));
+		const { name, value } = e.target;
+		setPost(prevPost => ({ ...prevPost, [name]: value }));
+	};
 
 	const onSubmit = e => {
 		e.preventDefault();
 		if (current === null) {
+			//rating = rating1;
+			console.log(post);
 			addPost(post);
 		} else {
 			updatePost(post);
@@ -86,8 +91,8 @@ function ReviewForm() {
 		// if (!preview) return;
 		// uploadImage(preview);
 	};
-	console.log("shopid: ");
-	console.log(post.shopid);
+	//console.log("rating ");
+	//console.log(rating1);
 
 	const [isExpanded, setExpanded] = useState(false);
 
@@ -107,17 +112,12 @@ function ReviewForm() {
 			<form onSubmit={onSubmit}>
 				<Avatar src="https://imgur.com/LmpYcOR.jpg" />
 				<div className="col">
-					{/* <StarRating name="stars" value={rating} /> */}
-					{/* <Box component="fieldset" mb={1} borderColor="transparent"> */}
-					{/* <Typography component="legend">Controlled</Typography> */}
 					<Rating
 						name="rating"
-						value={rating1}
-						onChange={(event, newValue) => {
-							setRating(newValue);
-						}}
+						value={rating}
+						onChange={onChange}
+						precision={0.5}
 					/>
-					{/* </Box> */}
 
 					<textarea
 						name="review"

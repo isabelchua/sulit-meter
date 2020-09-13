@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import ShareIcon from "@material-ui/icons/Share";
 import { Button } from "@material-ui/core";
 import RoomIcon from "@material-ui/icons/Room";
+import PostContext from "../context/postContext";
+import { useParams } from "react-router-dom";
+import Rating from "@material-ui/lab/Rating";
 
 function ShopBanner({ shop }) {
+	//for retriving # of posts
+	const postContext = useContext(PostContext);
+	const { posts } = postContext;
+
 	const { name, image, description, phone, address, short } = shop;
+
+	const { id } = useParams();
 
 	//const { id, name } = useParams();
 
@@ -22,7 +31,8 @@ function ShopBanner({ shop }) {
 				<p>{address}</p>
 				<p>{description}</p>
 				{/* {stars total} */}
-				{/* {review - length} */}
+				<Rating name="read-only" value={4.5} readOnly precision={0.5} />
+				<p>{posts.filter(foo => foo.shopid === id).length} Reviews</p>
 			</div>
 			<div className="shop-button">
 				<Button

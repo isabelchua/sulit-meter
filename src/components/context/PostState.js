@@ -21,7 +21,7 @@ const PostState = props => {
 				image: "https://i.imgur.com/w6igL9E.jpg",
 				review:
 					"Excellent! Staff are very friendly! Definitely will come back! Very family style! Original presentation! The pakbet was served in a hallowed squash! Nice!!",
-				rating: 5,
+				rating: 4,
 				userid: "1",
 				shopid: "1",
 				date: ""
@@ -43,7 +43,7 @@ const PostState = props => {
 				shop: "1",
 				image: "",
 				review: "Soooo good!",
-				rating: 5,
+				rating: 3,
 				userid: "3",
 				shopid: "1"
 			},
@@ -53,7 +53,7 @@ const PostState = props => {
 				shop: 4,
 				image: "https://i.imgur.com/5Tuw7mv.jpg",
 				review: "Soooo good!",
-				rating: 5,
+				rating: 3,
 				userid: "1",
 				shopid: "6"
 			},
@@ -63,7 +63,7 @@ const PostState = props => {
 				shop: 1,
 				image: "https://i.imgur.com/pLPZ3vM.jpg",
 				review: "Soooo good!",
-				rating: 5,
+				rating: 4,
 				userid: "1",
 				shopid: "9"
 			},
@@ -73,7 +73,7 @@ const PostState = props => {
 				shop: 1,
 				image: "https://i.imgur.com/fWn2enF.jpg",
 				review: "Soooo good!",
-				rating: 5,
+				rating: 4,
 				userid: "1",
 				shopid: "9"
 			}

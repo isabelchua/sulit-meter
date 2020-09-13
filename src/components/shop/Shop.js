@@ -41,7 +41,6 @@ function Shop() {
 		<div className="main-wrap">
 			<div className="col1">
 				<Logo />
-
 				<ShopBanner shop={shop.find(obj => obj.id === id)} />
 			</div>
 			<div className="col2">
