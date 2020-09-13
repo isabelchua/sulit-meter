@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import { Avatar } from "@material-ui/core";
 import Rating from "@material-ui/lab/Rating";
+import PostContext from "../context/postContext";
 
-function Post({ posts, user }) {
+function Post({ post, user }) {
 	//const foodContext = useContext(FoodContext);
+	const postContext = useContext(PostContext);
+	const { deletePost, setPost, clearPost } = postContext;
 
-	const { name, review, image } = posts;
+	const { id, name, review, image, userid } = post;
 	const { fname, lname, address, rating } = user;
+
+	const onDelete = () => {
+		deletePost(id);
+		clearPost();
+	};
+
+	// if user id is === to post userid
+
+	// if(user.id === userid ) {
+	// 	console.log(object);
+	// }
 
 	return (
 		<div className="post">
@@ -25,13 +39,18 @@ function Post({ posts, user }) {
 				{/* <h4>{name}</h4> */}
 				<p>{review}</p>
 				<img src={image} alt="food pic" className="img" />
+				{userid}
+				{"  = "} {user.id}
+				{/* if logged in user id is === to post userid then show delete button */}
+				<button onClick={() => setPost(post)}>Edit</button>
+				<button onClick={onDelete}>delete</button>
 			</div>
 		</div>
 	);
 }
 
 Post.propTypes = {
-	posts: PropTypes.object.isRequired
+	post: PropTypes.object.isRequired
 };
 
 export default Post;

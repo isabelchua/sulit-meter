@@ -59,7 +59,7 @@ function Shop() {
 					.map(foo => (
 						<Post
 							key={foo.id}
-							posts={foo}
+							post={foo}
 							user={user.find(user => foo.userid === user.id)}
 						/>
 					))}

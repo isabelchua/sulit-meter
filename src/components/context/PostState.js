@@ -3,7 +3,13 @@ import PostContext from "./postContext";
 import postReducer from "./postReducer";
 import { nanoid } from "nanoid";
 
-import { ADD_POST } from "../types";
+import {
+	ADD_POST,
+	DELETE_POST,
+	SET_POST,
+	CLEAR_POST,
+	UPDATE_POST
+} from "../types";
 
 const PostState = props => {
 	const initialState = {
@@ -87,11 +93,33 @@ const PostState = props => {
 		dispatch({ type: ADD_POST, payload: post });
 	};
 
+	const deletePost = id => {
+		dispatch({ type: DELETE_POST, payload: id });
+	};
+
+	const setPost = post => {
+		dispatch({ type: SET_POST, payload: post });
+	};
+
+	const clearPost = () => {
+		dispatch({ type: CLEAR_POST });
+	};
+
+	// UPDATE
+	const updatePost = post => {
+		dispatch({ type: UPDATE_POST, payload: post });
+	};
+
 	return (
 		<PostContext.Provider
 			value={{
 				posts: state.posts,
-				addPost
+				addPost,
+				deletePost,
+				current: state.current,
+				setPost,
+				clearPost,
+				updatePost
 			}}
 		>
 			{props.children}
